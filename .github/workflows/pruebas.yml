@@ -18,7 +18,7 @@ jobs:
       - name: Construyendo y probando el código
         run: |
           chmod +x gradlew        
-          ./gradlew build
+          ./gradlew jar
   Test: 
     runs-on: ubuntu_latest
     needs: Build
