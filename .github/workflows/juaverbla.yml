@@ -1,0 +1,23 @@
+name: juaverbla Workflow
+on:
+  issues:
+    types: [opened]  # Se dispara al crear un nuevo "Issue"
+  project_card:
+    types: [moved]   # Se dispara al cambiar de columna en el proyecto
+  workflow_dispatch:  # Se puede disparar manualmente desde la sección Actions
+
+jobs:
+  check-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Issue or Project Card
+        uses: actions/github-script@v4
+        with:
+          script: |
+            if (github.event_name === 'issues') {
+              console.log('New Issue created');
+            } else if (github.event_name === 'project_card') {
+              console.log('Project card moved');
+            } else {
+              console.log('Manual workflow dispatch');
+            }
