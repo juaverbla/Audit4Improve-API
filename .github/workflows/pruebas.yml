@@ -26,3 +26,18 @@ jobs:
         run: |
           chmod +x gradlew        
           ./gradlew build
+  Test: 
+    runs-on: ubuntu_latest
+    needs: Build
+    env:
+      GITHUB_LOGIN: ${{ github.actor }}
+      GITHUB_PACKAGES: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Se ejecutan las pruebas de verificación
+        run: |
+           chmod +x gradlew
+           ./gradlew test
+        
+
+      
