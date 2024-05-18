@@ -102,6 +102,12 @@
 			"unit": "issues"
 		},
 		{
+			"name": "num_errores",
+			"type": "java.lang.Integer",
+			"description": "Numero de errores detectados",
+			"unit": "issues"
+    },
+    {
 			"name": "issues",
 			"type": "java.lang.Integer",
 			"description": "Tareas totales",
