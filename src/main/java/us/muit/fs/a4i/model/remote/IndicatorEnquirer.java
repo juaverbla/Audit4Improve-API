@@ -78,7 +78,8 @@ public class IndicatorEnquirer extends GitHubEnquirer {
 			
 			List<GHIssue> openIssues = remoteRepo.getIssues(GHIssueState.OPEN);
 			int numTotIssues = remoteRepo.getIssues(GHIssueState.ALL).size();
-			
+			log.info("Valor:" + numTotIssues);
+			/*
 			GHIssue primerIssuePrueba = openIssues.get(1);
 			Date abierto = primerIssuePrueba.getCreatedAt();
 			Date cerrado = primerIssuePrueba.getClosedAt();
@@ -88,7 +89,7 @@ public class IndicatorEnquirer extends GitHubEnquirer {
 		    
 			long tiempoClasificacion = (cierreMilestone.getTime() - abierto.getTime()) / 3600000;
 			long tiempoIssue = ( cerrado.getTime() - abierto.getTime() ) / 3600000;
-			
+			*/
 			
 
 			/**
@@ -100,7 +101,7 @@ public class IndicatorEnquirer extends GitHubEnquirer {
 			 * Metric.MetricBuilder<Integer>("subscribers",
 			 * remoteRepo.getSubscribersCount());
 			 */
-			
+			/*
 			 
 			ReportItemBuilder<Long> clasificacion = new ReportItem.ReportItemBuilder<Long>("clasificacion",
 					tiempoClasificacion);
@@ -111,13 +112,13 @@ public class IndicatorEnquirer extends GitHubEnquirer {
 			/*
 			 * MetricBuilder<Integer> forks = new Metric.MetricBuilder<Integer>("forks",
 			 * remoteRepo.getForksCount()); forks.source("GitHub");
-			 */
+			 
 			ReportItemBuilder<Long> correccion = new ReportItem.ReportItemBuilder<Long>("correccion",
 					tiempoIssue);
 			correccion.source("GitHub");
 			myRepo.addMetric(correccion.build());
 			log.info("Añadida métrica forks " + correccion);
-
+			*/
 			/*
 			 * MetricBuilder<Integer> watchers = new
 			 * Metric.MetricBuilder<Integer>("watchers", remoteRepo.getWatchersCount());
