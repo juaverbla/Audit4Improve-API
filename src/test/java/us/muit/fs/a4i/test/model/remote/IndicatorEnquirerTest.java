@@ -4,6 +4,7 @@
 package us.muit.fs.a4i.test.model.remote;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -90,9 +91,11 @@ void testBuildReport() {
 
 IndicatorEnquirer enquirer = new IndicatorEnquirer();
 
-ReportI report = enquirer.buildReport("MIT-FS/Audit4Improve-API");
+ReportI report = enquirer.buildReport("aitlaival/Audit4Improve-API");
 
-assertEquals(3,report.getMetricByName("num_errores"), "Hay otro número de errores");
+assertEquals(5,report.getMetricByName("num_errores").getValue(), "Hay otro número de errores");
+assertNotNull(report.getMetricByName("clasificacion").getValue(), "No hay un tiempo de clasificacion");
+assertNotNull(report.getMetricByName("correccion").getValue(), "No hay un tiempo de correccion");
 }
 
 }

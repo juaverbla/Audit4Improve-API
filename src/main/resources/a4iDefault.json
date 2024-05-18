@@ -106,8 +106,20 @@
 			"type": "java.lang.Integer",
 			"description": "Numero de errores detectados",
 			"unit": "issues"
-    },
-    {
+    	},
+    	{
+			"name": "clasificacion",
+			"type": "java.lang.Long",
+			"description": "Tiempo total de clasificación de issues",
+			"unit": "date"
+    	},
+    	{
+			"name": "correccion",
+			"type": "java.lang.Long",
+			"description": "Tiempo total de corrección de issues",
+			"unit": "date"
+    	},
+    	{
 			"name": "issues",
 			"type": "java.lang.Integer",
 			"description": "Tareas totales",
@@ -156,6 +168,13 @@
 			"name": "overdued",
 			"type": "java.lang.Double",
 			"description": "Ratio de issues vencidos frente a abiertos",
+			"unit": "ratio",
+			"limits": { "ok": 5, "warning": 9, "critical": 12 }
+		},
+		{
+			"name": "ProcesoDeIssues",
+			"type": "java.lang.Double",
+			"description": "Clasificacion de buen proceso de resolucion de issues",
 			"unit": "ratio",
 			"limits": { "ok": 5, "warning": 9, "critical": 12 }
 		},
